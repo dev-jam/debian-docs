@@ -33,7 +33,7 @@ Switch back to the terminal with:
 
 **< Ctrl > + < Alt > + < F2 >**  
 
-Prepare for chrooting:  
+Prepare for chroot:  
 
 Mount root partition (LVM) on /mnt and boot partition on /mnt/boot in the following order:  
 
@@ -51,7 +51,7 @@ Chroot into the installed system:
 ```no-highlight
 $ chroot /mnt  
 $ nano /etc/crypttab  
-add “foo_crypt /dev/foo none luks” without the quotes and save  
+Add “foo_crypt /dev/foo none luks” without the quotes and save  
 $ update-initramfs -k all -u  
 ```
 
@@ -76,9 +76,9 @@ After booting into the fresh install I replaced the device name with its UUID in
 
 ```no-highlight
 $ ls -l /dev/disk/by-uuid  
-find the UUID  
+Find the UUID  
 $ sudo nano /etc/crypttab  
-change to “foo_crypt UUID=xxxxxxxxxxxxxx none luks” without the quotes and save  
+Change to “foo_crypt UUID=xxxxxxxxxxxxxx none luks” without the quotes and save  
 $ sudo update-initramfs -k all -u  
 ```
 
